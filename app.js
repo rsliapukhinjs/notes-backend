@@ -8,6 +8,7 @@ app.use(express.static("dist"));
 const cors = require("cors");
 app.use(cors());
 
+require("express-async-errors");
 const notesRouter = require("./controllers/notes");
 app.use("/api/notes", notesRouter);
 
