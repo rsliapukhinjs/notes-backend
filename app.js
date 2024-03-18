@@ -9,8 +9,13 @@ const cors = require("cors");
 app.use(cors());
 
 require("express-async-errors");
+
 const notesRouter = require("./controllers/notes");
 app.use("/api/notes", notesRouter);
+const usersRouter = require("./controllers/users");
+app.use("/api/users", usersRouter);
+const loginRouter = require("./controllers/login");
+app.use("/api/login", loginRouter);
 
 const logger = require("./utils/logger");
 const middleware = require("./utils/middleware");
